@@ -1,0 +1,4 @@
+python-dotenv
+zhipuai
+rich
+pyyaml
