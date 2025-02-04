@@ -10,7 +10,7 @@ from services.chat_service import ChatService
 class ChatBot:
     """聊天机器人主类"""
 
-    def __init__(self, character_id: str = "wang_biao"):
+    def __init__(self, character_id: str = "li_ming"):
         self.chat_service = ChatService()
         self.conversation = Conversation()
         self.load_character(character_id)
