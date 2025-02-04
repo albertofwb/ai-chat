@@ -4,14 +4,14 @@ from typing import Optional
 from character.character import Character
 from config.config_manager import config_manager
 from models.conversation import Conversation
-from services.chat_service import ChatService
+from services.chat_service import get_selected_bot
 
 
 class ChatBot:
     """聊天机器人主类"""
 
     def __init__(self, character_id: str = "li_ming"):
-        self.chat_service = ChatService()
+        self.chatbot = get_selected_bot()
         self.conversation = Conversation()
         self.load_character(character_id)
 
@@ -42,13 +42,12 @@ class ChatBot:
             messages = self.conversation.get_messages_with_context()
 
             # 获取配置参数
-            temperature = float(config_manager.get_config_value('TEMPERATURE', '0.7'))
-            max_tokens = int(config_manager.get_config_value('MAX_TOKENS', '2000'))
+            max_tokens = int(config_manager.get_config_value('MAX_TOKENS', '40000'))
 
             # 发送请求获取响应
-            response = await self.chat_service.send_message(
+            response = await self.chatbot.send_message(
                 messages=messages,
-                temperature=temperature,
+                temperature=self.chatbot.get_temperature(),
                 max_tokens=max_tokens
             )
 
