@@ -1,3 +1,5 @@
 config
 .idea
 __pycache__
+data/
+src/demo/

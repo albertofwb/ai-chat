@@ -2,3 +2,11 @@ python-dotenv
 zhipuai
 rich
 pyyaml
+fastapi
+uvicorn
+jinja2
+websockets
+edge-tts
+numpy
+chromadb
+sentence-transformers

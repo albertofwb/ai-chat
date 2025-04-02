@@ -14,7 +14,8 @@ class Character:
             raise ValueError(f"Character {character_id} not found")
 
         self.prompt_builder = PromptBuilder()
-        self.memory_manager = MemoryManager(self.character_data)
+        self.character_id = character_id
+        self.memory_manager = MemoryManager(self.character_data, character_id)
 
     def get_system_prompt(self) -> str:
         return self.prompt_builder.build_prompt(self.character_data)
