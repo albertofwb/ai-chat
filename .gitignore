@@ -3,3 +3,4 @@ config
 .idea
 __pycache__
 demo
+src/services/vosk-model*

@@ -61,9 +61,8 @@ class ChatInterface:
     def show_welcome_message(self):
         """显示欢迎信息"""
         welcome_text = f"""
-欢迎来到温情对话系统
 
-当前角色: {self.chatbot.get_current_character()}
+我是: {self.chatbot.get_current_character()}
 
 可用命令:
 - help: 显示帮助信息
@@ -71,8 +70,7 @@ class ChatInterface:
 - switch: 切换对话角色
 - quit: 退出程序
 
->>>
-"""
+>>>"""
         print(welcome_text)
 
     async def get_user_input(self) -> Optional[str]:

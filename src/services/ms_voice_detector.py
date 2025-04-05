@@ -24,7 +24,7 @@ class MSVoiceDetector:
             audio_config=self.audio_input_config,
         )
 
-    def get_speech_text(self):
+    def get_speech_text(self) -> str:
         """开始录音并等待说话结束"""
         # 用于同步的事件
         done = False

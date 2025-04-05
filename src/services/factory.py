@@ -4,7 +4,6 @@ from config.config_manager import config_manager
 
 
 def get_voice_detector() -> MSVoiceDetector:
-
     speech_key = config_manager.get_config_value('speech_key')
     service_region = config_manager.get_config_value("service_region")
 
@@ -12,13 +11,12 @@ def get_voice_detector() -> MSVoiceDetector:
     return detector
 
 
-
 def get_speech_instance() -> SpeechAssistant:
     speech_key = config_manager.get_config_value('speech_key')
     service_region = config_manager.get_config_value("service_region")
 
     return SpeechAssistant(
-            speech_key,
-            service_region,
-            "data",
-            "zh-CN-XiaomoNeural")
+        speech_key,
+        service_region,
+        "data",
+        "zh-CN-XiaomoNeural")
