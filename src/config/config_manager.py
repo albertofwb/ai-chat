@@ -58,6 +58,10 @@ CHARACTERS_DIR=characters
         """获取模型名称"""
         return os.getenv('MODEL_NAME', 'charglm-4')
 
+    def get_tts_api_key(self) -> str:
+        """获取 TTS API key"""
+        return os.getenv('TTS_API_KEY')
+
     def get_character_dir(self) -> Path:
         """获取角色配置目录"""
         return self.config_dir / 'characters'
@@ -71,4 +75,4 @@ CHARACTERS_DIR=characters
 config_manager = ConfigManager()
 
 if __name__ == '__main__':
-    print(config_manager.get_api_key())
+    print(config_manager.get_tts_api_key())

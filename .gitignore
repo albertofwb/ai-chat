@@ -3,3 +3,4 @@ config
 __pycache__
 data/
 src/demo/
+*.wav
